@@ -43,7 +43,7 @@ public class MainApp {
 
         System.out.println(resultsB);
 
-        resultsA.keySet().stream().forEach((element) -> {
+        resultsA.keySet().forEach((element) -> {
             ArrayList<String> arr = resultsA.get(element);
             arr.add("x" + arr.size() + " time(s)");////adds here
             resultsC.put(element, arr.size());
@@ -61,8 +61,7 @@ public class MainApp {
 
         Arrays.stream(strings).collect(Collectors.groupingBy(String::length)).forEach((elementLength,element)-> {
             System.out.println(elementLength+" letters frequency "+element.size());
-            System.out.print(element);
-            System.out.println();
+            System.out.println(element);
         });
 
 
