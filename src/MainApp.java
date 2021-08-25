@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainApp {
 
@@ -17,7 +18,7 @@ public class MainApp {
             } else {
                 ArrayList<String> cat = new ArrayList<>();
                 cat.add(element);
-                resultsA.put(length,cat );
+                resultsA.put(length, cat);
 
             }
 
@@ -42,24 +43,28 @@ public class MainApp {
 
         System.out.println(resultsB);
 
-        resultsA.keySet().stream().forEach((element)->{
+        resultsA.keySet().stream().forEach((element) -> {
             ArrayList<String> arr = resultsA.get(element);
-            arr.add("x"+arr.size()+" time(s)" );////adds here
-            resultsC.put(element,arr.size());
+            arr.add("x" + arr.size() + " time(s)");////adds here
+            resultsC.put(element, arr.size());
 
         });
         System.out.println(resultsC);
 
 
-////        resultsA.keySet().stream().forEach((element)->{
-//            ArrayList<String> arrrr = resultsA.get(element);
-////            int size = arr.size();
-////            arr.add(size+" time(s)" );
-//            System.out.println(arrrr);
-////            resultsA.put(element,arrrr);
-//
-////        });
+
         System.out.println(resultsA);
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        Arrays.stream(strings).collect(Collectors.groupingBy(String::length)).forEach((elementLength,element)-> {
+            System.out.println(elementLength+" letters frequency "+element.size());
+            System.out.print(element);
+            System.out.println();
+        });
+
 
     }
 
