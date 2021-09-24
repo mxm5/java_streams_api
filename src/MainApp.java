@@ -59,9 +59,9 @@ public class MainApp {
         System.out.println();
         System.out.println();
 
-        Arrays.stream(strings).collect(Collectors.groupingBy(String::length)).forEach((elementLength,element)-> {
-            System.out.println(elementLength+" letters frequency "+element.size());
-            System.out.println(element);
+        Arrays.stream(strings).collect(Collectors.groupingBy(String::length)).forEach((elementLength,groupedByLen)-> {
+            System.out.println(elementLength+" letters frequency "+groupedByLen.size());
+            System.out.println(groupedByLen);
         });
 
 
